@@ -11,7 +11,7 @@ const { stdout, stderr } = require('process');
 
  const transporter = nodemailer.createTransport(sendgridTransport({
      auth:{
-         api_key:'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' //Place SendGrid API key here
+         api_key:'' //Place SendGrid API key here
      }
  }))
  // invoke CLI and get parameter for repository needed
