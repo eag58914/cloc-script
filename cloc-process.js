@@ -40,6 +40,7 @@ prompt.start()
      await download(`${result.gitUser}/${result.repository}`, `${result.cloneRepository}`, function (err) {
             console.log(err ? 'Error' : 'Success')
           })
+          
         cb()
    }
 

@@ -11,6 +11,7 @@ Works with Github, Bitbucket and GitLab repositories
 - Node v13.7.0
     - Must have latest node version installed 
     - Packages required
+    	- Run "npm install -g cloc" from the command line
     	- Run "npm install download-git-repo" from the command line
     	- Run "npm install prompt" from the command line
     	- Run "npm install nodemailer" from the command line
