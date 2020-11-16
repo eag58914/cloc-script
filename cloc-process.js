@@ -1,11 +1,11 @@
 `use strict`
 
 const fs = require('fs')
- const download = require('download-git-repo');
- const prompt = require('prompt');
- const nodemailer = require('nodemailer')
- const sendgridTransport = require('nodemailer-sendgrid-transport');
- const cp  = require('child_process');
+const download = require('download-git-repo');
+const prompt = require('prompt');
+const sendgridTransport = require('nodemailer-sendgrid-transport');
+const cp  = require('child_process');
+const nodemailer = require('nodemailer')
 const { stdout, stderr } = require('process');
 
 
