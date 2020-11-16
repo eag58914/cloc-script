@@ -8,17 +8,10 @@ const fs = require('fs')
  const cp  = require('child_process');
 const { stdout, stderr } = require('process');
 
- const properties = [
-     {
-         name: 'username'
-     },
-     {
-         name:'password'
-     }
- ]
+
  const transporter = nodemailer.createTransport(sendgridTransport({
      auth:{
-         api_key:'' //Place SendGrid API key here
+         api_key:'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' //Place SendGrid API key here
      }
  }))
  // invoke CLI and get parameter for repository needed
@@ -34,17 +27,15 @@ prompt.start()
     console.log('What email would you like to send to?');
     console.log('  Email: ' + result.email);
 
-
-     async function getRepo(cb){
+     function getRepo(){
          console.log(`Downloading the repository: ${result.repository}...`)
-     await download(`${result.gitUser}/${result.repository}`, `${result.cloneRepository}`, function (err) {
-            console.log(err ? 'Error' : 'Success')
-          })
-          
-        cb()
+     download(`${result.gitUser}/${result.repository}`, `${result.cloneRepository}`, function (err) {
+        return (err ? 'Error' : 'Success')
+      })
+      
    }
 
-  function clocProcessor(cb){
+  function clocProcessor(){
       console.log(`Processing the repository: ${result.repository} through cloc...`)
     cp.exec(`cloc ${result.cloneRepository}`,(err,stdout,stderr)=>{
         console.log(stdout)
@@ -56,12 +47,14 @@ prompt.start()
         to:`${result.email}`,
         from:'garciaelco18@gmail.com',
         subject:`cloc report for repository ${result.repository}`,
-        html:`${output}`
-    
-})
+        html:`${output}`})
+
     })
 } 
-getRepo(clocProcessor)
+
+getRepo()
+setTimeout(function(){clocProcessor()},3000)
+
 
 })
 
