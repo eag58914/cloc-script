@@ -46,6 +46,8 @@ prompt.start()
   function clocProcessor(cb){
       console.log(`Processing the repository: ${result.repository} through cloc...`)
     cp.exec(`cloc ${result.cloneRepository}`,(err,stdout,stderr)=>{
+        console.log(stdout)
+        console.log(stderr)
       const output = (stdout.toString('utf8'))
       
     console.log(`Sending the cloc report email to: ${result.email}`)
