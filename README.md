@@ -1,5 +1,5 @@
 # cloc-script
-## *Send repository cloc report to a specified email address as an attachment (.CVS)*
+## *Send repository cloc report to a specified email address as JSON*
 
 * * *
 
@@ -27,8 +27,7 @@ Works with Github, Bitbucket and GitLab repositories
 **(Prompted for values)**
 ```sh
 
-Type the GitHub user name for the repository: <user name>
-Type the repository name for the repository: <repository name>
+Type the repository direct HTTPS link for the repository: <repository URL>
 Type location where you want the repository to go: <file location>
 Type the destination email and press enter: <destination email address>
 ```

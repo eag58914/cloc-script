@@ -18,18 +18,18 @@ const { stdout, stderr } = require('process');
 prompt.start()
 
 // get repository from github
- prompt.get(['gitUser', 'repository','cloneRepository','email'], function (err, result) {
+ prompt.get(['repository','cloneRepository','email'], function (err, result) {
     if (err) { console.log(err); }
     console.log('Command-line input received:');
-    console.log('  Git User: ' + result.gitUser);
-    console.log('  Repository: ' + result.repository);    
+   // console.log('  Git User: ' + result.gitUser);
+    console.log('  RepositoryURL: ' + result.repository);    
     console.log('  Location: ' + result.cloneRepository);    
     console.log('What email would you like to send to?');
     console.log('  Email: ' + result.email);
 
      function getRepo(){
          console.log(`Downloading the repository: ${result.repository}...`)
-     download(`${result.gitUser}/${result.repository}`, `${result.cloneRepository}`, function (err) {
+     download(`direct:${result.repository}`, `${result.cloneRepository}`, { clone: true },function (err) {
         return (err ? 'Error' : 'Success')
       })
       
@@ -53,7 +53,5 @@ prompt.start()
 } 
 
 getRepo()
-setTimeout(function(){clocProcessor()},3000)
-
-
+setTimeout(function(){clocProcessor()},10000)
 })
