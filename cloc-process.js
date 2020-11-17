@@ -57,12 +57,3 @@ setTimeout(function(){clocProcessor()},3000)
 
 
 })
-
-
-
-
-
-
-
-//eag58914/dog_selector_exercise
-
