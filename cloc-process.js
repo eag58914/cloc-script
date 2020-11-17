@@ -37,17 +37,17 @@ prompt.start()
 
   function clocProcessor(){
       console.log(`Processing the repository: ${result.repository} through cloc...`)
-    cp.exec(`cloc ${result.cloneRepository}`,(err,stdout,stderr)=>{
+    cp.exec(`cloc --json ${result.cloneRepository}`,(err,stdout,stderr)=>{
         console.log(stdout)
         console.log(stderr)
-      const output = (stdout.toString('utf8'))
+    //   const output = (stdout.toString())
       
     console.log(`Sending the cloc report email to: ${result.email}`)
     transporter.sendMail({
         to:`${result.email}`,
         from:'garciaelco18@gmail.com',
         subject:`cloc report for repository ${result.repository}`,
-        html:`${output}`})
+        html:`${stdout}`})
 
     })
 } 
