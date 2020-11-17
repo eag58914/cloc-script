@@ -17,7 +17,7 @@ Works with Github, Bitbucket and GitLab repositories
     	- Run "npm install nodemailer" from the command line
     	- Run "npm install nodemailer-sendgrid-transport" from the command line
     - Destination email address(does not have to be a gmail account )
-  - SignUp an get API key from SendGrip [link to signup](https://signup.sendgrid.com)
+  - SignUp API an get API key from SendGrip [link to signup](https://signup.sendgrid.com)
 - Git (Mac version 2.28.0)
 
 ### Usage
@@ -46,5 +46,5 @@ Sending the cloc report email to: <destination email address>
 
 #### File output
 An email will be sent to the destination email with the subject "cloc report for repository &lt;repository name&gt;"
-- The email will contain a message with your cloc report 
+- The email will contain a message with your cloc report in JSON format
 
